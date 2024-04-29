@@ -15,12 +15,10 @@ int main()
         optionsInput(OptionType::Symbols)
     );
     std::cout << settings.options << std::endl;
-    int isValid = showingScript(settings.options);
+    showingScript(settings.options);
 
-    if (isValid > 0) {
-        if (starter() == 1) {
-            std::cout << "Run" << std::endl;
-        }
+    if (starter() == 1) {
+        std::cout << "Run" << std::endl;
     }
 
     return 0;

@@ -13,4 +13,4 @@ enum OptionType
 void initialScript();
 std::string passwordInput();
 bool optionsInput(OptionType type);
-int showingScript(int options);
+void showingScript(int options);

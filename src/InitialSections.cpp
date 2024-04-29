@@ -49,21 +49,10 @@ bool optionsInput(OptionType type)
     return true;
 }
 
-int showingScript(int options)
+void showingScript(int options)
 {
     std::cout << std::endl;
-    int result {0};
-
-    if (options < 5) {
-        std::cout << "Error: Please add some options to check" << std::endl;
-        result = 0;
-    } else {
-        std::cout << "With the length of the password inserted and the options," << std::endl;
-        std::cout << "the software has to check " << std::to_string(options) << " possible passwords" << std::endl;
-        result = 1;
-    }
-
+    std::cout << "With the length of the password inserted and the options," << std::endl;
+    std::cout << "the software has to check " << std::to_string(options) << " possible passwords" << std::endl;
     std::cout << std::endl;
-
-    return result;
 }
