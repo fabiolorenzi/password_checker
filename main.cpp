@@ -1,5 +1,6 @@
 #include <iostream>
 
+#include "src/Checker.hpp"
 #include "src/InitialSections.hpp"
 #include "src/Settings.hpp"
 
@@ -13,7 +14,14 @@ int main()
         optionsInput(OptionType::CapChar),
         optionsInput(OptionType::Symbols)
     );
-    showingScript(settings.options);
+    std::cout << settings.options << std::endl;
+    int isValid = showingScript(settings.options);
+
+    if (isValid > 0) {
+        if (starter() == 1) {
+            std::cout << "Run" << std::endl;
+        }
+    }
 
     return 0;
 }
