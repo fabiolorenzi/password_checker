@@ -16,7 +16,7 @@ public:
     std::vector<char> userPassword;
     std::vector<char> chars;
 
-    Settings(bool _hasNumbers, bool _hasLowerChar, bool _hasCapChar, bool _hasSymbols, std::string _userPassword);
+    Settings(std::string _userPassword, bool _hasNumbers, bool _hasLowerChar, bool _hasCapChar, bool _hasSymbols);
     ~Settings();
     std::vector<char> populateChars();
 };
