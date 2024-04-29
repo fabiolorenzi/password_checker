@@ -12,12 +12,8 @@ Settings::Settings(std::string _userPassword, bool _hasNumbers, bool _hasLowerCh
     for (int x {0}; x < _userPassword.length(); ++x) {
         userPassword.push_back(_userPassword[x]);
     }
-
-    std::cout << userPassword.size() << std::endl;
-
+    
     options = std::pow(chars.size(), userPassword.size());
-
-    std::cout << _userPassword << std::endl;
 }
 
 Settings::~Settings()
