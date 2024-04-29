@@ -1,11 +1,19 @@
 #include "Settings.hpp"
 
-Settings::Settings()
+Settings::Settings(bool _hasNumbers, bool _hasLowerChar, bool _hasCapChar, bool _hasSymbols, std::string _userPassword)
 {
-    hasNumbers = false;
-    hasLowerChar = false;
-    hasCapChar = false;
-    hasSymbols = false;
+    hasNumbers = _hasNumbers;
+    hasLowerChar = _hasLowerChar;
+    hasCapChar = _hasCapChar;
+    hasSymbols = _hasSymbols;
+
+    chars = populateChars();
+
+    for (int x; x < _userPassword.length(); ++x) {
+        userPassword.push_back(_userPassword[x]);
+    }
+
+    options = std::pow(chars.size(), userPassword.size());
 }
 
 Settings::~Settings()
