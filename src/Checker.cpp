@@ -70,6 +70,28 @@ std::string brutalize(Settings _settings)
                                                     if (checkPassword(brutePassword, _settings.userPassword) == true) {
                                                         return temp;
                                                     }
+                                                } else {
+                                                    for (int t {0}; t < charsOptions.size(); t++) {
+                                                        brutePassword[6] = charsOptions[t];
+                                                        if (brutePassword.size() == 7) {
+                                                            std::string temp = sumString(brutePassword);
+                                                            std::cout << temp << std::endl;
+                                                            if (checkPassword(brutePassword, _settings.userPassword) == true) {
+                                                                return temp;
+                                                            }
+                                                        } else {
+                                                            for (int s {0}; s < charsOptions.size(); s++) {
+                                                                brutePassword[7] = charsOptions[s];
+                                                                if (brutePassword.size() == 8) {
+                                                                    std::string temp = sumString(brutePassword);
+                                                                    std::cout << temp << std::endl;
+                                                                    if (checkPassword(brutePassword, _settings.userPassword) == true) {
+                                                                        return temp;
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
                                                 }
                                             }
                                         }
