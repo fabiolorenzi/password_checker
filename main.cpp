@@ -24,7 +24,7 @@ int main()
     showingScript(settings.options);
 
     if (starter() == 1) {
-        std::cout << "Run" << std::endl;
+        brutalize(settings);
     }
 
     return 0;

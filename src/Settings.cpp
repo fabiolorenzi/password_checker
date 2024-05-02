@@ -28,7 +28,7 @@ std::vector<char> Settings::populateChars()
     char capChar[26] = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'};
     char symbols[11] = {'!', '$', '%', '^', '<', '>', '?', '-', '@', '~', '#'};
 
-    std::vector<char> result;
+    std::vector<char> result = {' '};
 
     if (hasNumbers) {
         for (char x : numbers) {

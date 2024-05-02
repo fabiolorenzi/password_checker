@@ -7,3 +7,15 @@ int starter()
     std::cin >> choice;
     return choice;
 }
+
+void brutalize(Settings _settings)
+{
+    std::vector<char> charsOptions = _settings.populateChars();
+    char brutePassword[_settings.userPassword.size()];
+    
+    for (int x {0}; x < (sizeof(brutePassword) / sizeof(char)); x++) {
+        brutePassword[x] = 'a';
+    }
+
+    std::cout << brutePassword << std::endl;
+}
