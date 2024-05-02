@@ -21,8 +21,6 @@ int main()
     bool _hasSymbols = optionsInput(OptionType::Symbols);
 
     Settings settings = Settings(_password, _hasNumbers, _hasLower, _hasCapChar, _hasSymbols);
-
-    std::cout << settings.options << std::endl;
     showingScript(settings.options);
 
     if (starter() == 1) {
