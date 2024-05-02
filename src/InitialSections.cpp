@@ -22,7 +22,12 @@ std::string passwordInput()
     std::cout << "Please insert the password to check: ";
     std::cin >> password;
 
-    return password;
+    if (password.length() > 0 && password.length() < 7) {
+        return password;
+    }
+    std::cout << "The password has to be between 1 and 6 chars" << std::endl;
+
+    return "!!!!!!!!!!!!!!!!!!!!";
 }
 
 bool optionsInput(OptionType type)

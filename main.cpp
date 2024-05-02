@@ -7,13 +7,19 @@
 int main()
 {
     initialScript();
-    Settings settings = Settings(
-        passwordInput(),
-        optionsInput(OptionType::Numbers),
-        optionsInput(OptionType::LowerChar),
-        optionsInput(OptionType::CapChar),
-        optionsInput(OptionType::Symbols)
-    );
+
+    std::string _password = passwordInput();
+    if (_password == "!!!!!!!!!!!!!!!!!!!!") {
+        return 0;
+    };
+
+    bool _hasNumbers = optionsInput(OptionType::Numbers);
+    bool _hasLower = optionsInput(OptionType::LowerChar);
+    bool _hasCapChar = optionsInput(OptionType::CapChar);
+    bool _hasSymbols = optionsInput(OptionType::Symbols);
+
+    Settings settings = Settings(_password, _hasNumbers, _hasLower, _hasCapChar, _hasSymbols);
+
     std::cout << settings.options << std::endl;
     showingScript(settings.options);
 
