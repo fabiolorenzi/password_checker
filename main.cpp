@@ -1,4 +1,6 @@
 #include <iostream>
+#include <chrono>
+#include <ctime>
 
 #include "src/Checker.hpp"
 #include "src/InitialSections.hpp"
@@ -24,7 +26,13 @@ int main()
     showingScript(settings.options);
 
     if (starter() == 1) {
-        brutalize(settings);
+        auto start = std::chrono::system_clock::now();
+        std::string result = brutalize(settings);
+        auto end = std::chrono::system_clock::now();
+
+        std::chrono::duration<double> timeDifference = end - start;
+        int timeResult = int(timeDifference.count());
+        successScript(result, timeResult);
     }
 
     return 0;

@@ -8,7 +8,7 @@ int starter()
     return choice;
 }
 
-int brutalize(Settings _settings)
+std::string brutalize(Settings _settings)
 {
     std::vector<char> charsOptions = _settings.populateChars();
     std::vector<char> brutePassword;
@@ -23,8 +23,7 @@ int brutalize(Settings _settings)
             std::string temp = sumString(brutePassword);
             std::cout << temp << std::endl;
             if (checkPassword(brutePassword, _settings.userPassword) == true) {
-                successScript(temp);
-                return 0;
+                return temp;
             }
         } else {
             for (int y {0}; y < charsOptions.size(); y++) {
@@ -33,8 +32,7 @@ int brutalize(Settings _settings)
                     std::string temp = sumString(brutePassword);
                     std::cout << temp << std::endl;
                     if (checkPassword(brutePassword, _settings.userPassword) == true) {
-                        successScript(temp);
-                        return 0;
+                        return temp;
                     }
                 } else {
                     for (int z {0}; z < charsOptions.size(); z++) {
@@ -43,8 +41,7 @@ int brutalize(Settings _settings)
                             std::string temp = sumString(brutePassword);
                             std::cout << temp << std::endl;
                             if (checkPassword(brutePassword, _settings.userPassword) == true) {
-                                successScript(temp);
-                                return 0;
+                                return temp;
                             }
                         } else {
                             for (int w {0}; w < charsOptions.size(); w++) {
@@ -53,8 +50,7 @@ int brutalize(Settings _settings)
                                     std::string temp = sumString(brutePassword);
                                     std::cout << temp << std::endl;
                                     if (checkPassword(brutePassword, _settings.userPassword) == true) {
-                                        successScript(temp);
-                                        return 0;
+                                        return temp;
                                     }
                                 } else {
                                     for (int v {0}; v < charsOptions.size(); v++) {
@@ -63,8 +59,7 @@ int brutalize(Settings _settings)
                                             std::string temp = sumString(brutePassword);
                                             std::cout << temp << std::endl;
                                             if (checkPassword(brutePassword, _settings.userPassword) == true) {
-                                                successScript(temp);
-                                                return 0;
+                                                return temp;
                                             }
                                         } else {
                                             for (int u {0}; u < charsOptions.size(); u++) {
@@ -73,8 +68,7 @@ int brutalize(Settings _settings)
                                                     std::string temp = sumString(brutePassword);
                                                     std::cout << temp << std::endl;
                                                     if (checkPassword(brutePassword, _settings.userPassword) == true) {
-                                                        successScript(temp);
-                                                        return 0;
+                                                        return temp;
                                                     }
                                                 }
                                             }
@@ -111,9 +105,10 @@ bool checkPassword(std::vector<char> _brutePassword, std::vector<char> _userPass
     return true;
 }
 
-void successScript(std::string value)
+void successScript(std::string value, int timeRequired)
 {
     std::cout << std::endl;
     std::cout << "The password is: " << value << std::endl;
+    std::cout << "The program took " << std::to_string(timeRequired) << "s to find it" << std::endl;
     std::cout << std::endl;
 }
