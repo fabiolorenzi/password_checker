@@ -1,8 +1,12 @@
 #pragma once
 
 #include <iostream>
+#include <vector>
 
 #include "Settings.hpp"
 
 int starter();
-void brutalize(Settings _settings);
+int brutalize(Settings _settings);
+std::string sumString(std::vector<char> _brutePassword);
+bool checkPassword(std::vector<char> _brutePassword, std::vector<char> _userPassword);
+void successScript(std::string value);
