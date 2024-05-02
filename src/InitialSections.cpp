@@ -22,10 +22,10 @@ std::string passwordInput()
     std::cout << "Please insert the password to check: ";
     std::cin >> password;
 
-    if (password.length() > 0 && password.length() < 7) {
+    if (password.length() > 0 && password.length() < 9) {
         return password;
     }
-    std::cout << "The password has to be between 1 and 6 chars" << std::endl;
+    std::cout << "The password has to be between 1 and 8 chars" << std::endl;
 
     return "!!!!!!!!!!!!!!!!!!!!";
 }
